@@ -1,21 +1,76 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
-	<header>
-		<title>Jamie Nachbar</title>
-		<head>
-			<link rel="stylesheet"  href="Website.css"> </head>
-			<meta name="theme-color" content="#ffffff">
-	</header>
+    <header>
+        <title>Jamie Nachbar</title>
+        <head>
+            <link rel="stylesheet"  type = "text/css" href="Website.css"> 
+        </head>
+            <meta name="theme-color" content="#ffffff">
+    </header>
 
-	<body>
-		<h1> Jamie Nachbar </h1>
-		<h2> I'm Jamie, a Junior Math / CS major at Yale excited about algorithms and theoretical computer science.</h2>
-		<div class = "row">
-			<div class = "col1" style="background-color: white;">
-				<h2> Past Projects </h2>
-			</div>
-			<div class = "col2" style="background-color: white;">
-				<h2> Skills </h2>
-			</div>
-		</div>
-	</body>
+    <body>
+        <div id="intro" class="floatleft"> 
+            <h1> Jamie Nachbar </h1>
+            <p> I'm Jamie, a Junior Math / CS major at Yale excited about algorithms and theoretical computer science.</p>
+        </div>
+
+        <div id="aboutme" class="floatleft"> 
+            <h2> About Me </h2>
+            <p> From - Charlottesville, VA
+                <br>College - Yale University
+                <br>Study - Math and Computer Science
+                <br>Favorite Classes - Algorithms and Discrete Math
+                <br>Other Hobbies - Running, Cooking
+                </p>
+        </div>
+
+        <div id="skills" class="floatleft"> 
+            <h2> Skills </h2>
+            <ul>
+                <li>Python</li>
+                <li>C Programming</li>
+                <li>Java</li>
+                <li>Scala</li>
+                <li>Data Structures</li>
+                <li>Algorithm Design</li>
+                <li>Git and Github</li>
+                <li>Jupyter Notebook</li>
+                <li>Intermediate German</li>
+                    
+            </ul>
+        </div>
+
+        <div id="workexperience" class="floatleft"> 
+            <h2> Work Experience </h2>
+            <h3>Research Intern - UVA Signal Intelligence Lab</h3>
+            <p>Worked on a project analyzing the power of signalling schemes with a focus on routing games</p>
+            <h3>Teaching Assistant - Structure of Networks</h3>
+            <p>Helped students master the Structure of Networks course, a class covering the fundamentals of graph theory and statistics.</p>
+            <h3>Software Intern - Astraea</h3>
+            <p>Wrote Python and Scala code to analyze satellite imagery and use machine learning to track deforestation in the Amazon Rainforest. 
+                Helped port in-house library from Scala to Python.</p>
+        </div>
+
+        <div id="projects" class="floatleft"> 
+            <h2> Projects </h2> 
+            <div class="floatleft projects_smallwidth">
+            <h3>Avoidcopter</h3>
+                <p>  Created a quadcopter from spare parts (some of which were designed and 3D printed by myself), 
+                attached a linux computer to it, and connected cameras and a GPS chip to achieve semi-autonomous flight.
+            </p>
+            </div> 
+            <div class="floatleft projects_smallwidth">
+            <h3>Zero Robotics</h3>
+                <p>Led a team of programmers writing code in C++ to control robots in space, onboard the International Space Station.</p>
+            </div>
+            <div class="floatleft projects_smallwidth">
+                <h3>Open Data Challenge</h3>
+                <p>Won third place in the Open Data Challenge, a data science competition 
+                sponsored by the city of Charlottesville involving the prediction of wireless network traffic on a pedestrian mall.</p>
+                </p>
+            </div>
+        </div>
+        
+    </body>
 </html>
