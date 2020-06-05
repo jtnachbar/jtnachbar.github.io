@@ -1,5 +1,5 @@
 body {
-    background-color: #F0EBD8;
+    background-color: #E1F4CB;
 }
 
 p {
@@ -27,21 +27,13 @@ h3{
     line-height: 0px;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-}
-
 #intro{
-    width: 25%;
+    width: 600px;
     height: 300px;
     border: 2px solid black;
     padding: 10px;
     margin: 20px;
     background-color: #BACBA9;
-    overflow: scroll;
 }
 
 .floatleft{
@@ -51,13 +43,13 @@ h3{
 }
 
 .projects_smallwidth{
-    width: 30%;
+    width: 210px;
 }
 
 #aboutme{
     background-color: white;
     text-align: center;
-    width: 15%;
+    width: 300px;
     height: 300px;
     border: 2px solid black;
     padding: 10px;
@@ -67,7 +59,7 @@ h3{
 
 #skills{
     background-color: white;
-    width: 15%;
+    width: 300px;
     height: 300px;
     border: 2px solid black;
     padding: 10px;
@@ -84,7 +76,7 @@ h3{
     padding: 10px;
     margin: 20px;
     display: block;
-
+    overflow: scroll;
 }
 
 #projects{
@@ -96,4 +88,5 @@ h3{
     margin: 20px;
     display: inline-block;
     background-color: #BACBA9;
+    overflow: scroll;
 }
