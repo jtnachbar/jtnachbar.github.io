@@ -1214,7 +1214,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .contact_from_area .form-group input:focus {
-  border-color: #fec608;
+  border-color: #0080FF;
 }
 
 .contact_from_area .form-group textarea {
@@ -1257,7 +1257,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
 }
 
 .contact_from_area .form-group textarea:focus {
-  border-color: #fec608;
+  border-color: #0080FF;
 }
 
 .contact_from_area .form-group:last-child {
@@ -1306,15 +1306,15 @@ body, p, h1, h2, h3, h4, h5, h6 {
   display: block;
   margin-right: 5px;
   margin-bottom: 5px;
-  background: #fec608;
+  background: #0080FF;
 }
 
 .envalab-style-switch .switched-options .styles li:nth-child(2) a {
-  background: #fe562e;
+  background: #0080FF;
 }
 
 .envalab-style-switch .switched-options .styles li:nth-child(3) a {
-  background: #fe2e86;
+  background: #0080FF;
 }
 
 .envalab-style-switch .switched-options .styles li:nth-child(4) a {
