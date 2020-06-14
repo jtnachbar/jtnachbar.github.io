@@ -69,7 +69,7 @@ body.light_bg {
 }
 
 body.dark_bg {
-  background: url(../img/Pattern_Drak.png) repeat scroll center center;
+  background-color: #98C1D9;
   background-size: contain;
 }
 
@@ -252,13 +252,13 @@ body, p, h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
-  color: #222222;
+  color: #FFFFFF;
   display: inline-block;
   transition: all 400ms linear 0s;
 }
 
 .header_area .navbar.navbar-default .navbar-collapse .nav.navbar-nav li:hover a, .header_area .navbar.navbar-default .navbar-collapse .nav.navbar-nav li.active a {
-  color: #fff;
+  color: #EE6C4D;
 }
 
 .header_area .navbar.navbar-default .navbar-collapse .nav.navbar-nav li:last-child {
@@ -472,7 +472,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
   text-align: center;
   line-height: 40px;
   border-radius: 20px;
-  color: #222222;
+  color: #FFFFFF;
   font-size: 18px;
   font-family: "Yellowtail", cursive;
   position: relative;
@@ -496,7 +496,7 @@ body, p, h1, h2, h3, h4, h5, h6 {
   text-align: center;
   line-height: 40px;
   font-size: 18px;
-  color: #222222;
+  color: #FFFFFF;
   top: -100%;
   left: 0px;
   font-family: FontAwesome;
