@@ -1,0 +1,478 @@
+/* ------------------------------------------------------------------
+   jamienachbar.com — monochrome split-flap
+   No frameworks. One file. Black and white only.
+   ------------------------------------------------------------------ */
+
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --text: #c9c9c9;
+  --dim: #8a8a8a;
+  --dim-2: #5c5c5c;
+  --hair: rgba(255, 255, 255, 0.13);
+  --hair-soft: rgba(255, 255, 255, 0.07);
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --measure: 60ch;
+  --pad: clamp(20px, 5vw, 44px);
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  background: #000;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #000;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.75;
+  font-variant-ligatures: none;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+p, h1, h2, h3, dl, dd, dt, ul, li { margin: 0; padding: 0; }
+
+a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.32);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.24em;
+  transition: text-decoration-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+a:hover { text-decoration-color: #fff; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 3px;
+}
+
+::selection { background: #fff; color: #000; }
+
+/* ---------------- background field ---------------- */
+
+.field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.dust {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  line-height: 1;
+  font-family: var(--mono);
+  font-weight: 400;
+  white-space: nowrap;
+  will-change: transform, opacity;
+  opacity: 0;
+  user-select: none;
+  transform-origin: 50% 50%;
+}
+
+.dust--stroke {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.65);
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(115% 85% at 50% 28%, rgba(0, 0, 0, 0) 24%, rgba(0, 0, 0, 0.72) 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 22%);
+}
+
+/* ---------------- cursor ring ---------------- */
+
+.ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: difference;
+  transition: opacity 0.4s ease, width 0.25s ease, height 0.25s ease, border-radius 0.25s ease;
+  will-change: transform;
+}
+
+.ring span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 2px;
+  margin: -1px 0 0 -1px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+body.has-pointer .ring { opacity: 1; }
+
+/* ---------------- layout ---------------- */
+
+.wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* ---------------- header ---------------- */
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.78);
+  -webkit-backdrop-filter: blur(10px) saturate(0);
+  backdrop-filter: blur(10px) saturate(0);
+  border-bottom: 1px solid var(--hair-soft);
+}
+
+.top-inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.mark {
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  text-decoration: none;
+  color: var(--fg);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+
+.nav a {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--dim);
+  text-decoration: none;
+}
+
+.nav a:hover { color: #fff; }
+
+/* ---------------- type ---------------- */
+
+.hero { padding: clamp(56px, 13vh, 128px) 0 0; }
+
+.eyebrow {
+  font-size: 11.5px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--dim-2);
+}
+
+.hero-name {
+  margin: 0.34em 0 0.42em;
+  font-size: clamp(2.3rem, 7.4vw, 4.6rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: var(--fg);
+}
+
+.lede {
+  max-width: 46ch;
+  font-size: clamp(15px, 1.5vw, 17.5px);
+  line-height: 1.68;
+  color: #d6d6d6;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+}
+
+.links li:not(:last-child)::after {
+  content: "·";
+  color: var(--dim-2);
+  margin: 0 0.9em;
+}
+
+.hint {
+  margin-top: 26px;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  color: var(--dim-2);
+}
+
+/* ---------------- sections ---------------- */
+
+.sec { padding-top: clamp(64px, 9vh, 104px); }
+
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--hair);
+}
+
+.sec-head .idx {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--dim-2);
+}
+
+.sec-head h2 {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+
+.prose { padding-top: 30px; }
+
+.prose p {
+  max-width: var(--measure);
+  margin-bottom: 1.15em;
+  color: var(--text);
+}
+
+.prose p:last-child { margin-bottom: 0; }
+
+/* ---------------- experience ---------------- */
+
+.entry {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 0 2rem;
+  padding: 26px 0 24px;
+  border-bottom: 1px solid var(--hair-soft);
+}
+
+.entry:last-of-type { border-bottom: 0; }
+
+.when {
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  color: var(--dim-2);
+  padding-top: 0.4em;
+  white-space: nowrap;
+}
+
+.role {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.4;
+  color: var(--fg);
+}
+
+.org {
+  margin-top: 0.15em;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+}
+
+.entry-body p:not(.org) {
+  margin-top: 0.85em;
+  max-width: 52ch;
+  color: var(--text);
+}
+
+/* ---------------- work ---------------- */
+
+.work {
+  list-style: none;
+  padding-top: 6px;
+}
+
+.work li {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) 1fr;
+  gap: 0.15em 2rem;
+  align-items: baseline;
+  padding: 15px 0 14px;
+  border-bottom: 1px solid var(--hair-soft);
+}
+
+.work a {
+  font-size: 14.5px;
+  color: var(--fg);
+  text-decoration-color: rgba(255, 255, 255, 0.22);
+}
+
+.work a:hover { text-decoration-color: #fff; }
+
+.work span {
+  font-size: 13.5px;
+  color: var(--dim);
+}
+
+/* ---------------- skills ---------------- */
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0 2.5rem;
+  padding-top: 26px;
+}
+
+.skill {
+  padding: 16px 0 15px;
+  border-bottom: 1px solid var(--hair-soft);
+}
+
+.skill dt {
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dim-2);
+  margin-bottom: 0.35em;
+}
+
+.skill dd { font-size: 13.5px; color: var(--text); }
+
+/* ---------------- contact ---------------- */
+
+.sec-contact { padding-bottom: 10px; }
+
+.big {
+  margin-top: 34px;
+  font-size: clamp(1.05rem, 3.2vw, 1.9rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  overflow-wrap: anywhere;
+}
+
+.big a { text-decoration-color: rgba(255, 255, 255, 0.4); }
+
+.note {
+  margin-top: 18px;
+  max-width: 52ch;
+  color: var(--dim);
+}
+
+/* ---------------- footer ---------------- */
+
+.foot { padding: clamp(70px, 10vh, 110px) 0 44px; }
+
+.foot-rule {
+  height: 1px;
+  background: var(--hair);
+  margin-bottom: 18px;
+}
+
+.foot-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  color: var(--dim-2);
+}
+
+.foot-row .dim { color: var(--dim-2); }
+
+/* ---------------- glyph machinery ---------------- */
+
+.w {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.g {
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+  vertical-align: baseline;
+  transform-origin: 50% 60%;
+  backface-visibility: hidden;
+}
+
+.g-float {
+  animation: drift var(--fdur) ease-in-out var(--fdel) infinite alternate;
+}
+
+@keyframes drift {
+  from { translate: 0 0; }
+  to { translate: var(--fx) var(--fy); }
+}
+
+/* ---------------- responsive ---------------- */
+
+@media (max-width: 700px) {
+  body { font-size: 14.5px; }
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 22px 0;
+  }
+  .when { padding-top: 0; margin-bottom: 0.5em; }
+  .work li {
+    grid-template-columns: 1fr;
+    gap: 0.2em;
+  }
+  .foot-row { flex-direction: column; }
+}
+
+/* ---------------- reduced motion ---------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .field,
+  .ring,
+  .hint { display: none; }
+
+  .g-float { animation: none; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* no-JS fallback: everything readable, no decoration */
+html:not(.js) .field,
+html:not(.js) .ring,
+html:not(.js) .hint { display: none; }

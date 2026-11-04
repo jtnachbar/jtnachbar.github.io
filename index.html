@@ -1,392 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="img/fav-icon.png" type="image/x-icon" />
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Jamie Nachbar </title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jamie Nachbar</title>
+  <meta name="description" content="Jamie Nachbar — mathematics and computer science. Algorithms, machine learning, and the systems that carry them.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="img/fav-icon.png" type="image/png" sizes="32x32">
+  <link rel="stylesheet" href="css/site.css">
+  <script>document.documentElement.className += " js";</script>
+</head>
+<body>
+  <div id="field" class="field" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div id="ring" class="ring" aria-hidden="true"><span></span></div>
 
-        <!-- Icon css link -->
-        <link href="vendors/material-icon/css/materialdesignicons.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="vendors/linears-icon/style.css" rel="stylesheet">
-        <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        
-        <!-- Extra plugin css -->
-        <link href="vendors/owl-carousel/assets/owl.carousel.css" rel="stylesheet">
-        <link href="vendors/animate-css/animate.css" rel="stylesheet">
-        
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/responsive.css" rel="stylesheet">
-        
-        <link rel="stylesheet" href="css/colors/blue.css" title="default">
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="mark" href="#top" data-glitch>JN</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about" data-glitch>About</a>
+        <a href="#experience" data-glitch>Experience</a>
+        <a href="#work" data-glitch>Work</a>
+        <a href="#contact" data-glitch>Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="top" class="wrap">
 
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body class="dark_bg" data-spy="scroll" data-target="#bs-example-navbar-collapse-1" data-offset="80" data-scroll-animation="true">
-       
-        <div id="preloader">
-            <div id="preloader_spinner">
-                <div class="spinner"></div>
-            </div>
+    <section class="hero">
+      <p class="eyebrow" data-glitch>Mathematics &amp; Computer Science</p>
+      <h1 class="hero-name" data-glitch>Jamie Nachbar</h1>
+      <p class="lede" data-glitch>I like problems with no obvious solution: algorithms, machine learning, and the systems that carry them. I studied mathematics and computer science at Yale.</p>
+      <ul class="links">
+        <li><a href="mailto:jamie.nachbar@yale.edu" data-glitch>Email</a></li>
+        <li><a href="https://github.com/jtnachbar" target="_blank" rel="noopener" data-glitch>GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/james-nachbar-081294195/" target="_blank" rel="noopener" data-glitch>LinkedIn</a></li>
+      </ul>
+      <p class="hint" data-glitch>Move the cursor: the type settles where you are.</p>
+    </section>
+
+    <section class="sec" id="about">
+      <div class="sec-head">
+        <span class="idx" data-glitch>01</span>
+        <h2 data-glitch>About</h2>
+      </div>
+      <div class="prose">
+        <p data-glitch>Hi, I'm Jamie. I'm most at home between theory and application — proving something about scheduling or routing, then shipping the code that makes it real. My interests run through robotics, automation, and artificial intelligence, but really any problem that yields to math and code.</p>
+        <p data-glitch>I care about rigor and about things that run. The projects I'm proudest of started as a question about a model and ended as software someone could actually use.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="experience">
+      <div class="sec-head">
+        <span class="idx" data-glitch>02</span>
+        <h2 data-glitch>Experience</h2>
+      </div>
+
+      <div class="entry">
+        <div class="when" data-glitch>Summer 2021</div>
+        <div class="entry-body">
+          <h3 class="role" data-glitch>Software Engineer Intern</h3>
+          <p class="org" data-glitch>Reservoir Labs</p>
+          <p data-glitch>Designed a deployment pipeline on AWS that built the Gradient Graph product from scratch, then built the demos on top of it. Proved conjectures about scheduling batches on a datacenter network.</p>
         </div>
-       
-        <!--================ Frist hader Area =================-->
-        <header class="header_area">
-            <div class="container">
-                <nav class="navbar navbar-default">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                    </div>
+      </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="#about">ABOUT ME </a></li>
-                            <li><a href="#skill">Skills</a></li>
-                            <li><a href="#education">Work History</a></li>
-                            <li><a href="#portfolio">PORTFOLIO</a></li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </nav>
-            </div>
-        </header>
-        <!--================End Footer Area =================-->
-        
-        <!--================Total container Area =================-->
-        <div class="container main_container">
-            <div class="content_inner_bg row m0">
-                <section class="about_person_area pad" id="about">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="person_img">
-                                <img src="img/member/member-1.jpg" alt="">
-                                <a class="download_btn" STYLE="font-family: Raleway, sans-serif" href="Nachbar_Resume.pdf" target="_blank"><span>Download Resume</span></a>
-                            </div>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="row person_details">
-                                <h3><span>Jamie Nachbar</span></h3>
-                                <h4>Math and CS Major at Yale</h4>
-                                <p>Hi, I'm Jamie! I'm excited about all kinds of computer science, especially algorithms and theoretical computer science. Some of my main areas of interest are robotics, automation, and artificial intelligence, but I am interested in pretty much any important problem that I think can be approached with technology and math. I love working on tough problems without an obvious solution, and I am most interested in combining theory with application. </p>
-                                <div class="person_information">
-                                    <ul>
-                                        <li>Address</li>
-                                        <li>Phone</li>
-                                        <li>Email</li>
-                                        <li>Major</li>
-                                        <li>Graduating Year</li>
-                                    </ul>
-                                    <ul>
-                                        <li>204 Elm Street #202204, New Haven, CT</li>
-                                        <li>+1 (434) 270-5024</li>
-                                        <li>jamie.nachbar@yale.edu</a></li>
-                                        <li>Mathematics and Computer Science (Double) </li>
-                                        <li>May 2022</li>
-                                    </ul>
-                                    <a href="https://github.com/jtnachbar" target="_blank"><br><br><img src = "img/github.png" style="width:50px;height:50px;float:left;margin-right:20px;"></a>
-                                    <a href="https://www.linkedin.com/in/james-nachbar-081294195/" target="_blank"><img src = "img/linkedin.png" style="width:50px;height:50px;float:left;"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="myskill_area pad" id="skill">
-                    <div class="main_title">
-                        <h2>Selected Skills</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 wow fadeInUp animated">
-                            <div class="skill_item_inner">
-                                <div class="single_skill">
-                                    <h4>Python</h4>
-                                    <p style="margin-bottom:10px;"> Python is my main programming language, and the one I feel the most comfortable using. I build most of my projects using Python, and I am familiar with many of the most popular libraries, including NumPy, PyTorch, Pandas, and Jupyter. </p>
-                                </div>
-
-                                <div class="single_skill">
-                                    <h4>C</h4>
-                                    <p style="margin-bottom:10px;"> I have taken many programming courses in C (Data Structures, Systems Programming, Parallel Computing), and am comfortable using the language to efficiently implement data structures and other algorithms, as well as debug memory issues.</p>
-                                </div>
-                                <div class="single_skill">
-                                    <h4>Scala</h4>
-                                    <p style="margin-bottom:10px;"> Scala was the primary language used at Astraea, where I spent multiple summers as an intern. I learned and came to really appreciate the functional paradigm, and I wrote Scala code to perform machine learning tasks using Apache Spark.</p>
-                                </div>
-                                <div class="single_skill">
-                                    <h4>Git and Github</h4>
-                                    <p style="margin-bottom:10px;"> Git is one of the most essential tools for any programmer, and I use git and github in all of my projects, both as version control and as a way of sharing my work with others.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 wow fadeInUp animated">
-                            
-                            <div class="skill_item_inner">
-                                <div class="single_skill">
-                                    <h4>Deep Learning</h4>
-                                    <p style="margin-bottom:10px;"> I have taken Deep Learning, as well as done multiple projects involving Deep Learning. I have predicted the weather in Brazil, tracked deforestation in the Amazon Rainforest, worked on detecting the movement of several C. Elegans specimens in one video using computer vision, predicted network traffic on a pedestrian mall, and diagnosed Alzheimers, all with deep learning. </p>
-                                </div>
-                                <div class="single_skill">
-                                    <h4>Algorithms</h4>
-                                    <p style="margin-bottom:10px;"> I have taken multiple courses in algorithms, as well as implemented many for my own projects. The study of algorithms, from a theoretical perspective is interesting to me, and I hope to go on to do further research in the field. </p>
-                                </div>
-                                <div class="single_skill">
-                                    <h4>Discrete Math</h4>
-                                    <p style="margin-bottom:10px;"> Many of my favorite math courses have had a discrete flavor. I especially love when more complex discrete math intersects with computer science to produce an especially nice algorithm or solution to a problem.</p>
-                                </div>
-                                <div class="single_skill">
-                                    <h4>German</h4>
-                                    <p style="margin-bottom:10px;"> I took German all throughout high school, and I spent the summer of 2019 in Germany on the Max Kade fellowship, learning about the language and culture.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="education_area pad" id="education">
-                    <div class="main_title">
-                        <h2>Work History</h2>
-                    </div>
-                    <div class="education_inner_area">
-                        <div class="education_item wow fadeInUp animated" data-line="">
-                            <a href="https://www.haifeng-xu.com/sigma" target = "_blank"><img src="img/jobs/reservoir.png" alt="" style="float:right;width:60px;height:60px;"></a>
-                            <h6>Summer 2021</h6>
-                            <h4>Software Engineer Intern</h4> 
-                            <h5>Reservoir Labs</h5>
-                            <p>I designed and implemented a deployment pipeline using Amazon Web Services to build Reservoir Labs' Gradient Graph product from scratch, and I built a series of product demos on top of those scripts. I also mathematically proved conjectures about scheduling multiple batches on a datacenter network.</p>
-                        </div>
-                        <div class="education_item wow fadeInUp animated" data-line="">
-                            <a href="https://www.haifeng-xu.com/sigma" target = "_blank"><img src="img/jobs/uva.png" alt="" style="float:right;width:60px;height:60px;"></a>
-                            <h6>Summer 2020</h6>
-                            <h4>Research Intern</h4> 
-                            <h5>UVA Signal Intelligence Lab</h5>
-                            <p>I worked on researching the power of signaling in Bayesian games, with an emphasis on routing games in UVA's Signal Intelligence Lab under Prof. Haifeng Xu.</p>
-                        </div>
-                        <div class="education_item wow fadeInUp animated" data-line="">
-                            <img src="img/jobs/yale.png" alt="" style="float:right;width:60px;height:60px;">
-                            <h6>Spring 2020</h6>
-                            <h4>Teaching Assistant</h4>
-                            <h5>Yale University</h5>
-                            <p>I assisted with teaching the course Structure of Networks, helping students with a variety of topics in Graph Theory, Probability, and Linear Algebra.</p>
-                        </div>
-                        <div class="education_item wow fadeInUp animated" data-line="">
-                            <a href="https://astraea.earth" target = "_blank"><img src="img/jobs/astraea.png" alt="" style="float:right;width:150px;height:60px;"></a>
-                            <h6>Summer 2018</h6>
-                            <h4>Software Intern</h4>
-                            <h5>Astraea</h5>
-                            <p>I used satellite image data and machine learning to track deforestation in the Amazon Rainforest, as well as helped port their in house library from Scala to Python.</p>
-                        </div>
-                </section>
-                <section class="portfolio_area pad" id="portfolio">
-                    <div class="main_title">
-                        <h2>Portfolio</h2>
-                    </div>
-                    <!--
-                    <div class="porfolio_menu">
-                        <ul class="causes_filter">
-                            <li class="active" data-filter="*"><a href="">All</a></li>
-                            <li data-filter=".photo"><a href="">Research</a></li>
-                            <li data-filter=".design"><a href="">Programming</a></li>
-                        </ul>
-                    </div>
-                    -->
-                    <div class="row">
-                        <div class="portfolio_list_inner">
-                            <div class="col-md-4 photo">
-                                <div class="portfolio_item">
-                                    <a href="https://github.com/Yale-Deep-Learning-for-Alzheimers/Alzheimers-DL-Network" target="_blank">
-                                    <div class="portfolio_img">
-                                        <img src="img/portfolio/mri.jpg" alt="" style="width:400px;height:225px">
-                                    </div>
-                                    </a>
-                                    <div class="portfolio_title">
-                                        <h4>Alzheimer's CNN</h4>
-                                        <h5>Predicting Alzheimer's Disease using a CNN on sequences of MRI scans</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 photo">
-                                <div class="portfolio_item">
-                                    <a href="https://github.com/jtnachbar/brazil_weather" target="_blank">
-                                    <div class="portfolio_img">
-                                        <img src="img/portfolio/rio.jpg" alt="" style="width:400px;height:225px">
-                                    </div>
-                                    </a>
-                                    <div class="portfolio_title">
-                                        <h4>Brazil Weather Prediction</h4>
-                                        <h5>Creating Weather forecasts using a neural network </h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 photo">
-                                <div class="portfolio_item">
-                                    <a href="https://github.com/jtnachbar/AvoidCopter" target="_blank">
-                                    <div class="portfolio_img">
-                                        <img src="img/portfolio/avoidcopter.jpeg" alt="" style="width:400px;height:225px">
-                                    </div>
-                                    </a>
-                                    <div class="portfolio_title">
-                                        <h4>Avoidcopter</h4>
-                                        <h5>Building a quadcopter with cameras and GPS navigation</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 design">
-                                <div class="portfolio_item">
-                                    <a href="https://github.com/chsbacon/open-data-challenge" target="_blank">
-                                    <div class="portfolio_img">
-                                        <img src="img/portfolio/downtown.jpg" alt="" style="width:400px;height:225px">
-                                    </div>
-                                    </a>
-                                    <div class="portfolio_title">
-                                        <a href="#"><h4>Open Data Challenge</h4></a>
-                                        <h5>Predicting wireless network useage on a pedestrian mall</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p style="margin-bottom:150px;">  </p>
-                </section>
-                <!--
-                <section class="contact_area pad" id="contact">
-                    <div class="main_title">
-                        <h2>Contact</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="left_contact_details wow fadeInUp animated">
-                                <div class="contact_title">
-                                    <h3>Contact Info</h3>
-                                </div>
-                                <p>If you think you have an interesting opportunity for me or a question about any of my projects, please don't hesitate to reach out! You can find plenty of my contact info on this page, or send me a message using the entry form. I am always interested in prospective chances to do cool things.</p>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <i class="fa fa-map-marker"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>Address</h4>
-                                        <p>204 Elm Street, Box # 202204, 06520, New Haven, Connecticut</p>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <i class="fa fa-phone"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>Phone</h4>
-                                        <p>+1 (434) 270-5024</p>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <i class="fa fa-envelope-o"></i>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4>Email</h4>
-                                        <p>jamie.nachbar@yale.edu <br> nachbarjamie@gmail.com</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        div class="col-md-6">
-                            <div class="contact_from_area wow fadeInUp animated">
-                                <div class="contact_title">
-                                    <h3>Send Message</h3>
-                                </div>
-                                <div class="row">
-                                    <form action="contact_process.php" method="post" id="contactForm">
-                                        <div class="form-group col-md-12">
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="First Name*">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <input type="text" class="form-control" name="last" id="last" placeholder="Last Name*">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email*">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <textarea class="form-control" rows="1" id="message" name="message" placeholder="Write Message"></textarea>
-                                        </div>
-                                        <div class="form-group col-md-12">
-                                            <button class="btn btn-default contact_btn" type="submit"><span>Send Message</span></button>
-                                        </div>
-                                    </form>
-                                    <div id="success">
-                                        <p>Message sent successfully!</p>
-                                    </div>
-                                    <div id="error">
-                                        <p>Message not sent. Something went wrong!</p>
-                                    </div>
-                                </div>
-                            </div>                            
-                        </div>
-                    
-                    </div>
-                </section>
-                ================Map Area =================
-                <p style="margin-bottom:20px;">  </p>
-                ================End Map Area =================
-            </div>
+      <div class="entry">
+        <div class="when" data-glitch>Summer 2020</div>
+        <div class="entry-body">
+          <h3 class="role" data-glitch>Research Intern</h3>
+          <p class="org" data-glitch>UVA Signal Intelligence Lab</p>
+          <p data-glitch>Studied the power of signaling in Bayesian games, with an emphasis on routing games, under Prof. Haifeng Xu.</p>
         </div>
-    -->
-        <!--================End Total container Area =================-->
-        
-        <!--================footer Area =================-->
-        <footer class="footer_area">
-            <div class="footer_copyright">
-                <div class="container">
-                    <div class="pull-left">
-                        <h5><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template made by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p></h5>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--================End footer Area =================-->
-        
-        
-        
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="js/jquery-2.1.4.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Extra plugin js -->
-        <script src="vendors/counter-up/waypoints.min.js"></script>
-        <script src="vendors/counter-up/jquery.counterup.min.js"></script>
-        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-        <script src="vendors/isotope/isotope.pkgd.min.js"></script>
-        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+      </div>
 
-        <script src="vendors/style-switcher/styleswitcher.js"></script>
-        <script src="vendors/style-switcher/switcher-active.js"></script>
-        <script src="vendors/animate-css/wow.min.js"></script>
-       
-        <!--gmaps Js-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-        <script src="js/gmaps.min.js"></script>
-        
-        <!-- contact js -->
-        <script src="js/jquery.form.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
-        <script src="js/contact.js"></script>
-        
-        <script src="js/theme.js"></script>
-    </body>
+      <div class="entry">
+        <div class="when" data-glitch>Spring 2020</div>
+        <div class="entry-body">
+          <h3 class="role" data-glitch>Teaching Assistant</h3>
+          <p class="org" data-glitch>Yale University</p>
+          <p data-glitch>Taught alongside Structure of Networks: graph theory, probability, and linear algebra.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when" data-glitch>Summer 2018</div>
+        <div class="entry-body">
+          <h3 class="role" data-glitch>Software Intern</h3>
+          <p class="org" data-glitch>Astraea</p>
+          <p data-glitch>Tracked deforestation in the Amazon Rainforest with satellite imagery and machine learning, and helped port the in-house library from Scala to Python.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="work">
+      <div class="sec-head">
+        <span class="idx" data-glitch>03</span>
+        <h2 data-glitch>Selected Work</h2>
+      </div>
+
+      <ul class="work">
+        <li>
+          <a href="https://github.com/Yale-Deep-Learning-for-Alzheimers/Alzheimers-DL-Network" target="_blank" rel="noopener" data-glitch>Alzheimer's CNN</a>
+          <span data-glitch>Predicting Alzheimer's disease from sequences of MRI scans.</span>
+        </li>
+        <li>
+          <a href="https://github.com/jtnachbar/brazil_weather" target="_blank" rel="noopener" data-glitch>Brazil Weather</a>
+          <span data-glitch>Neural-network forecasts from historical station data.</span>
+        </li>
+        <li>
+          <a href="https://github.com/jtnachbar/AvoidCopter" target="_blank" rel="noopener" data-glitch>Avoidcopter</a>
+          <span data-glitch>A quadcopter with cameras and GPS that steers around obstacles.</span>
+        </li>
+        <li>
+          <a href="https://github.com/chsbacon/open-data-challenge" target="_blank" rel="noopener" data-glitch>Open Data Challenge</a>
+          <span data-glitch>Predicting wireless traffic on a pedestrian mall.</span>
+        </li>
+        <li>
+          <a href="https://github.com/jtnachbar" target="_blank" rel="noopener" data-glitch>Everything else</a>
+          <span data-glitch>Smaller experiments, coursework, and half-finished ideas.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="sec" id="skills">
+      <div class="sec-head">
+        <span class="idx" data-glitch>04</span>
+        <h2 data-glitch>Tools</h2>
+      </div>
+      <dl class="skills">
+        <div class="skill">
+          <dt data-glitch>Languages</dt>
+          <dd data-glitch>Python, C, Scala, JavaScript</dd>
+        </div>
+        <div class="skill">
+          <dt data-glitch>Machine Learning</dt>
+          <dd data-glitch>PyTorch, NumPy, pandas, computer vision</dd>
+        </div>
+        <div class="skill">
+          <dt data-glitch>Systems</dt>
+          <dd data-glitch>Git, AWS, Apache Spark, Linux</dd>
+        </div>
+        <div class="skill">
+          <dt data-glitch>Mathematics</dt>
+          <dd data-glitch>Algorithms, discrete math, probability, linear algebra</dd>
+        </div>
+        <div class="skill">
+          <dt data-glitch>Elsewhere</dt>
+          <dd data-glitch>German, quadcopters, long proofs</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="sec sec-contact" id="contact">
+      <div class="sec-head">
+        <span class="idx" data-glitch>05</span>
+        <h2 data-glitch>Contact</h2>
+      </div>
+      <p class="big" data-glitch><a href="mailto:jamie.nachbar@yale.edu">jamie.nachbar@yale.edu</a></p>
+      <p class="note" data-glitch>If you have an interesting problem, a question about a project, or an opportunity worth talking about, write to me. I answer everything.</p>
+      <ul class="links">
+        <li><a href="https://github.com/jtnachbar" target="_blank" rel="noopener" data-glitch>GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/james-nachbar-081294195/" target="_blank" rel="noopener" data-glitch>LinkedIn</a></li>
+      </ul>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-rule"></div>
+      <div class="foot-row">
+        <span data-glitch>© <span id="year">2026</span> Jamie Nachbar</span>
+        <span class="dim" data-glitch>Black and white, on purpose.</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/site.js"></script>
+</body>
 </html>
