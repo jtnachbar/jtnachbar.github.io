@@ -93,6 +93,10 @@
     '9': ['6']
   };
 
+  // punctuation that must never move: a decaying period or comma reads as a
+  // typo, not as texture, and it is the one mark whose absence breaks a sentence
+  var STATIC = { '.': true, ',': true };
+
   // last resort: punctuation and symbols, never a letter
   var TEXT_NOISE = Array.from(new Set(
     ("!@#$%&*+-=?^<>~" + "\u00a2\u00a3\u00a5\u00a7\u00b6\u00b0\u00b1\u00d7\u00f7").split('')
@@ -206,6 +210,17 @@
         }
 
         var span = document.createElement('span');
+
+        // periods and commas are left as plain, untracked glyphs: they keep
+        // their column but never flip, float, or decay
+        if (STATIC[ch]) {
+          span.className = 'g';
+          span.textContent = ch;
+          span.setAttribute('aria-hidden', 'true');
+          word.appendChild(span);
+          continue;
+        }
+
         span.className = 'g';
         span.textContent = Math.random() < 0.8 ? morph(ch, true) : ch;
         span.dataset.real = ch;
