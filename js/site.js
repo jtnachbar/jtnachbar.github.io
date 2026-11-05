@@ -7,6 +7,64 @@
      fade over their life, and settle when you get close
    ------------------------------------------------------------------ */
 
+/* contact: the address is stored base64-encoded in data-mail and assembled at
+   runtime, so the literal address never appears in the page source. Kept in
+   its own IIFE because the motion engine below bails out entirely when the
+   user prefers reduced motion. */
+(function () {
+  'use strict';
+
+  var links = document.querySelectorAll('[data-mail]');
+
+  for (var i = 0; i < links.length; i++) {
+    var address = '';
+    try { address = window.atob(links[i].getAttribute('data-mail')); } catch (err) { address = ''; }
+    if (!address) continue;
+    links[i].setAttribute('href', 'mailto:' + address);
+    links[i].removeAttribute('data-mail');
+  }
+})();
+
+/* censored copy: every [data-censor] slot is filled with fixed-width cells
+   whose glyphs are replaced at random, so the text reads as permanently
+   redacted. Any number of random characters, never resolving. */
+(function () {
+  'use strict';
+
+  var slots = document.querySelectorAll('[data-censor]');
+  if (!slots.length) return;
+
+  var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&@$?*+=<>/'.split('');
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cells = [];
+
+  function pickChar() { return CHARS[(Math.random() * CHARS.length) | 0]; }
+
+  for (var s = 0; s < slots.length; s++) {
+    var count = parseInt(slots[s].getAttribute('data-censor'), 10) || 0;
+    for (var c = 0; c < count; c++) {
+      var cell = document.createElement('span');
+      cell.className = 'censor';
+      cell.textContent = pickChar();
+      cell.setAttribute('aria-hidden', 'true');
+      slots[s].appendChild(cell);
+      cells.push(cell);
+    }
+    slots[s].removeAttribute('data-censor');
+  }
+
+  // reduced motion gets the redaction, not the flicker
+  if (reduceMotion || !cells.length) return;
+
+  window.setInterval(function () {
+    if (document.hidden) return;
+    for (var i = 0; i < cells.length; i++) {
+      if (Math.random() < 0.45) continue;
+      cells[i].textContent = pickChar();
+    }
+  }, 85);
+})();
+
 (function () {
   'use strict';
 
@@ -93,9 +151,10 @@
     '9': ['6']
   };
 
-  // punctuation that must never move: a decaying period or comma reads as a
-  // typo, not as texture, and it is the one mark whose absence breaks a sentence
-  var STATIC = { '.': true, ',': true };
+  // marks that must never move: a decaying period or comma reads as a typo
+  // rather than as texture, and a flickering decorative triangle just looks
+  // like a rendering bug
+  var STATIC = { '.': true, ',': true, '\u25b2': true };
 
   // last resort: punctuation and symbols, never a letter
   var TEXT_NOISE = Array.from(new Set(
@@ -720,7 +779,7 @@
       window.setTimeout(function () {
         if (!document.hidden) paintIcon('J');
       }, rand(150, 300));
-    }, 3886);
+    }, 777); // 5x the old 3886ms cadence
   }
 
   /* ---------------- boot ---------------- */
