@@ -1,0 +1,10 @@
+{
+  "name": "jtnachbar.github.io",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Personal site for jamienachbar.com (GitHub Pages) — static HTML/CSS/JS, no build step",
+  "scripts": {
+    "serve": "python3 -m http.server ${PORT:-8080} --bind 0.0.0.0",
+    "dev": "npm run serve"
+  }
+}
