@@ -251,12 +251,6 @@ body.has-pointer .ring { opacity: 1; }
   border-bottom: 1px solid var(--hair);
 }
 
-.sec-head .idx {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  color: var(--dim-2);
-}
-
 .sec-head h2 {
   font-size: 11px;
   font-weight: 500;
@@ -369,27 +363,6 @@ body.has-pointer .ring { opacity: 1; }
 
 .skill dd { font-size: 13.5px; color: var(--text); }
 
-/* ---------------- contact ---------------- */
-
-.sec-contact { padding-bottom: 10px; }
-
-.big {
-  margin-top: 34px;
-  font-size: clamp(1.05rem, 3.2vw, 1.9rem);
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  color: var(--fg);
-  overflow-wrap: anywhere;
-}
-
-.big a { text-decoration-color: rgba(255, 255, 255, 0.4); }
-
-.note {
-  margin-top: 18px;
-  max-width: 52ch;
-  color: var(--dim);
-}
-
 /* ---------------- footer ---------------- */
 
 .foot { padding: clamp(70px, 10vh, 110px) 0 44px; }
@@ -410,8 +383,6 @@ body.has-pointer .ring { opacity: 1; }
   color: var(--dim-2);
 }
 
-.foot-row .dim { color: var(--dim-2); }
-
 /* ---------------- glyph machinery ---------------- */
 
 .w {
@@ -430,6 +401,16 @@ body.has-pointer .ring { opacity: 1; }
 
 .g-float {
   animation: drift var(--fdur) ease-in-out var(--fdel) infinite alternate;
+}
+
+/* censored copy: fixed-width cells refilled at random by js/site.js */
+.censor-slot { white-space: nowrap; }
+
+.censor {
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+  color: var(--fg);
 }
 
 @keyframes drift {
